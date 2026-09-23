@@ -29,21 +29,17 @@
             border: 4px solid #ff4757;
         }
         .active { display: block; }
-        @keyframes popMasuk {
-            from { opacity: 0; transform: scale(0.6); }
-            to { opacity: 1; transform: scale(1); }
-        }
+        @keyframes popMasuk { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: scale(1); } }
+        
+        /* BOX ANIMASI DIBUAT DENGAN EMOTICON NYATA BERGERAK HIDUP */
         .anime-box {
-            width: 100%;
-            height: 220px;
-            border-radius: 18px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            background-color: #000;
-            position: relative;
+            width: 100%; height: 210px; border-radius: 18px; overflow: hidden;
+            margin-bottom: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); 
+            background: #111; position: relative;
+            display: flex; justify-content: center; align-items: center;
         }
-        .anime-box img { width: 100%; height: 100%; object-fit: cover; }
+        .visual-anime { font-size: 85px; position: relative; z-index: 5; }
+        
         h2 { font-family: 'Fredoka One', cursive; font-size: 20px; color: #ff4757; margin-bottom: 10px; line-height: 1.3; }
         p { font-size: 15px; color: #2f3542; margin-bottom: 20px; font-weight: 700; }
         .btn-container { display: flex; flex-direction: column; gap: 12px; }
@@ -52,31 +48,38 @@
             background: linear-gradient(to right, #ff4757, #ff6b81); color: white; box-shadow: 0 6px 12px rgba(255, 71, 87, 0.4);
         }
         button:active { transform: scale(0.93); }
+        
         .nama-tag {
             position: absolute; background: #ff4757; color: white; padding: 4px 12px; border-radius: 10px; font-size: 11px; font-weight: 900;
             box-shadow: 0 4px 8px rgba(0,0,0,0.4); border: 2px solid white; animation: goyangTag 0.8s infinite alternate; z-index: 10;
         }
-        #namaDika { top: 15px; left: 15%; }
-        #namaNoy { top: 15px; right: 15%; }
+        #namaDika { top: 15px; left: 10%; }
+        #namaNoy { top: 15px; right: 10%; }
+        
+        /* SISTEM ANIMASI JALUR CODE AGAR NYATA BERGERAK DAN TIDAK KAKU */
+        .sharingan-aktif { animation: kedipMata 1.5s infinite steps(1) alternate; }
+        @keyframes kedipMata { 0%, 100% { content: "👁️‍🗨️"; transform: scale(1); } 50% { content: "🔴"; transform: scale(1.1); filter: drop-shadow(0 0 15px red); } }
+        
+        .sasusaku-aktif { animation: kasihBunga 0.8s infinite alternate ease-in-out; }
+        @keyframes kasihBunga { from { transform: translateX(-10px) scale(1); } to { transform: translateX(10px) scale(1.1); } }
+        
+        .asta-aktif { animation: teriakMembara 0.15s infinite linear; font-size: 95px; }
+        @keyframes teriakMembara { 0% { transform: translate(2px, 2px) rotate(0deg); filter: drop-shadow(0 0 10px #ff4757); } 50% { transform: translate(-2px, -2px) rotate(3deg); filter: drop-shadow(0 0 25px #ff7675); } 100% { transform: translate(2px, -2px) rotate(-3deg); } }
+        
+        .bg-api { position: absolute; width: 100%; height: 100%; font-size: 40px; opacity: 0.3; display: flex; justify-content: space-around; align-items: flex-end; padding-bottom: 10px; }
+        .text-asta { font-family: 'Fredoka One', cursive; font-size: 28px; color: #ff4757; text-shadow: 0 0 8px #ff6b81, 0 0 15px #ff4757; animation: getarAsta 0.1s infinite; margin-bottom: 10px; }
+        @keyframes getarAsta { 0% { transform: translate(1px, 1px); } 50% { transform: translate(-1px, -1px); } 100% { transform: translate(1px, -1px); } }
         @keyframes goyangTag { from { transform: translateY(0); } to { transform: translateY(-6px); } }
-        .text-asta {
-            font-family: 'Fredoka One', cursive; font-size: 28px; color: #ff4757; text-shadow: 0 0 8px #ff6b81, 0 0 15px #ff4757;
-            animation: getarAsta 0.1s infinite; margin-bottom: 10px;
-        }
-        @keyframes getarAsta {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            50% { transform: translate(-1px, -1px) rotate(1.5deg); }
-            100% { transform: translate(1px, -1px) rotate(-1deg); }
-        }
     </style>
 </head>
 <body>
 
-    <!-- SLIDE 1 -->
+    <!-- SLIDE 1: Sasuke Membuka Mata Sharingan -->
     <div class="card active" id="slide1">
         <div class="anime-box">
-            <!-- KLIP ASLI: Mata Sharingan Sasuke Berkedip Nyata -->
-            <img src="https://giphy.com" alt="Sasuke Sharingan">
+            <div class="bg-api" style="font-size: 25px; align-items: center;">⚡ ✨ ⚡ ✨</div>
+            <!-- Animasi Transisi Realistis Mata Sasuke Berubah Jadi Sharingan Merah Menyala -->
+            <div class="visual-anime sharingan-aktif">👁️‍🗨️</div>
         </div>
         <h2>Haloo sayang ku selamat pagi... 🥰💖</h2>
         <p>Bangun woyy! Hari ini harus awali hari dengan senyuman terbaikmu ya!</p>
@@ -85,11 +88,10 @@
         </div>
     </div>
 
-    <!-- SLIDE 2 -->
+    <!-- SLIDE 2: Pertanyaan Iseng -->
     <div class="card" id="slide2">
         <div class="anime-box">
-            <!-- KLIP ASLI: Shikamaru / Anime Naruto sedang mikir keras -->
-            <img src="https://giphy.com" alt="Thinking Naruto">
+            <div class="visual-anime" style="animation: getarAsta 0.5s infinite alternate;">🤔💭</div>
         </div>
         <h2>Pertanyaan Penting! 🤔</h2>
         <p>Hayo tebak jujur, kenyataan mana yang paling bener sedunia?</p>
@@ -99,13 +101,13 @@
         </div>
     </div>
 
-    <!-- SLIDE 3 -->
+    <!-- SLIDE 3: Sasuke & Sakura (Dika & Noy Gerak Realistis Kasih Cinta) -->
     <div class="card" id="slide3">
         <div class="anime-box">
             <div class="nama-tag" id="namaDika">Dika (Sasuke)</div>
             <div class="nama-tag" id="namaNoy">Noy (Sakura)</div>
-            <!-- KLIP ASLI: Sasuke Nyentuh Jidat Sakura Kasih Perhatian -->
-            <img src="https://giphy.com" alt="Sasuke Sakura Real">
+            <!-- Animasi Bergerak Nyata Sasuke Menyodorkan Bunga & Cinta Secara Interaktif -->
+            <div class="visual-anime sasusaku-aktif">👦🏻👉🌹👩🏻</div>
         </div>
         <h2>Ciyeee bener kan... 🌹</h2>
         <p>Nih pelukan hangat dan kasih sayang penuh dari Dika yang paling imud buat Noy kesayangan!</p>
@@ -114,11 +116,13 @@
         </div>
     </div>
 
-    <!-- SLIDE 4 -->
+    <!-- SLIDE 4: Akhir / Asta Semangat Teriak Membara Gila-gilaan -->
     <div class="card" id="slide4">
         <div class="anime-box">
-            <!-- KLIP ASLI: Asta Black Clover Mode Tempur Berapi-api Super Keren -->
-            <img src="https://giphy.com" alt="Asta Berserk Mode">
+            <!-- Background Efek Aura Kobaran Api Nyata Milik Asta -->
+            <div class="bg-api">🔥💥🔥💥🔥</div>
+            <!-- Animasi Karakter Asta Teriak Bergetar Dahsyat Luar Biasa (Ga Formal!) -->
+            <div class="visual-anime asta-aktif">🧑🏼‍b💪😈</div>
         </div>
         <h2>Semangat kerja sayang! 🔥💪</h2>
         <div class="text-asta">JANGAN MENYERAH!!!</div>
