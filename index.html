@@ -3,132 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untuk Noy ✨</title>
+    <title>Untukmu</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background: linear-gradient(135deg, #2c3e50, #bdc3c7);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
             font-family: 'Nunito', sans-serif;
+            position: relative;
+            background: #0f172a;
         }
+        
+        /* LATAR BELAKANG LAYAR FULL VISUAL ANIME YANG ELEGAN & COOL */
+        .bg-full-anime {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.85)), 
+                              url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            filter: saturate(0.8) brightness(0.8);
+        }
+
         .card {
-            background: rgba(255, 255, 255, 0.98);
-            width: 90%;
-            max-width: 380px;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            width: 88%;
+            max-width: 420px;
+            padding: 35px 25px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
             text-align: center;
             display: none;
-            animation: popMasuk 0.5s ease forwards;
-            border: 3px solid #34495e;
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            z-index: 5;
         }
         .active { display: block; }
-        @keyframes popMasuk { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
-        .image-box {
-            width: 100%; height: 200px; border-radius: 15px; overflow: hidden;
-            margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            background: #eaeded; position: relative;
-        }
-        .image-box img { width: 100%; height: 100%; object-fit: cover; }
-        
-        h2 { font-family: 'Fredoka One', cursive; font-size: 20px; color: #2c3e50; margin-bottom: 12px; }
-        p { font-size: 15px; color: #7f8c8d; margin-bottom: 20px; font-weight: 700; line-height: 1.5; }
-        .btn-container { display: flex; flex-direction: column; gap: 10px; }
+        h2 { font-family: 'Fredoka One', cursive; font-size: 24px; color: #ffffff; margin-bottom: 15px; letter-spacing: 0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        p { font-size: 16px; color: #e2e8f0; margin-bottom: 30px; font-weight: 600; line-height: 1.6; text-align: justify; text-align-last: center; }
+        .btn-container { display: flex; flex-direction: column; gap: 12px; }
         
         button {
-            padding: 13px; font-size: 15px; font-weight: 900; border: none; border-radius: 50px; cursor: pointer; transition: 0.1s;
-            background: #34495e; color: white; box-shadow: 0 4px 10px rgba(52, 73, 94, 0.3);
+            padding: 15px; font-size: 15px; font-weight: 800; border: none; border-radius: 50px; cursor: pointer; transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(255, 255, 255, 0.9); color: #0f172a; font-weight: 900;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
         }
-        button:active { transform: scale(0.95); }
-        
-        .nama-tag {
-            position: absolute; background: #34495e; color: white; padding: 4px 12px; border-radius: 10px; font-size: 11px; font-weight: 900;
-            border: 2px solid white; z-index: 10;
+        button:hover { background: #ffffff; transform: translateY(-2px); }
+        button:active { transform: scale(0.97); }
+
+        .text-asta {
+            font-family: 'Fredoka One', cursive; font-size: 32px; color: #ff7675; 
+            text-shadow: 0 0 10px rgba(255,118,117,0.5); margin-bottom: 15px;
         }
-        #namaDika { top: 15px; left: 15%; }
-        #namaNoy { top: 15px; right: 15%; }
     </style>
 </head>
 <body>
 
-    <!-- SLIDE 1: Awal -->
+    <div class="bg-full-anime"></div>
+
+    <!-- SLIDE 1 -->
     <div class="card active" id="slide1">
-        <div class="image-box">
-            <img src="https://unsplash.com" alt="Anime Sasuke">
-        </div>
-        <h2>Halo Noy, selamat pagi.</h2>
-        <p>Ga ada kata-kata puitis hari ini. Cuma mau mastiin kamu udah siap ngejalani hari dengan baik.</p>
+        <h2>Selamat Pagi.</h2>
+        <p>Ga ada kata-kata puitis atau gombalan hari ini. Cuma mau memastikan kalau kamu membuka hari ini dengan kesiapan dan energi penuh.</p>
         <div class="btn-container">
-            <button onclick="pindahSlide(1, 2)">Lanjut part 2, sayang? Pilih ini</button>
+            <button onclick="pindahSlide(1, 2)">Lanjut ke part 2</button>
         </div>
     </div>
 
-    <!-- SLIDE 2: Pertanyaan Teka-teki -->
+    <!-- SLIDE 2 -->
     <div class="card" id="slide2">
-        <div class="image-box">
-            <img src="https://unsplash.com" alt="Anime Thinking">
-        </div>
-        <h2>Pertanyaan singkat.</h2>
-        <p>Dari dua pilihan ini, tebak mana pernyataan yang paling benar?</p>
+        <h2>Pertanyaan Sederhana.</h2>
+        <p>Sebelum melangkah lebih jauh hari ini, coba pilih pernyataan yang menurutmu paling tepat.</p>
         <div class="btn-container">
-            <button onclick="jawabSalah()">Dika ganteng 😎</button>
-            <button onclick="jawabBenar()">Dika imud 🥺👉👈</button>
+            <button onclick="jawabSalah()">Sedang merasa biasa saja 🤔</button>
+            <button onclick="jawabBenar()">Siap menaklukkan hari 😎👉👈</button>
         </div>
     </div>
 
-    <!-- SLIDE 3: Sasuke & Sakura -->
+    <!-- SLIDE 3 -->
     <div class="card" id="slide3">
-        <div class="image-box">
-            <div class="nama-tag" id="namaDika">Dika (Sasuke)</div>
-            <div class="nama-tag" id="namaNoy">Noy (Sakura)</div>
-            <img src="https://unsplash.com" alt="Sasuke Sakura">
-        </div>
-        <h2>Jawabanmu bener.</h2>
-        <p>Mungkin terdengar biasa aja, tapi kehadiran kamu itu berharga banget buat aku. Makasih ya udah ada sampai sekarang.</p>
+        <h2>Pilihan Yang Bagus.</h2>
+        <p>Mungkin keseharian terasa berjalan normal dan biasa saja. Tapi aku cuma mau bilang, kehadiranmu di dalam hidupku memberikan arti yang sangat besar.</p>
         <div class="btn-container">
-            <button onclick="pindahSlide(3, 4)">Lanjut lagi</button>
+            <button onclick="pindahSlide(3, 4)">Lanjut</button>
         </div>
     </div>
 
-    <!-- SLIDE 4: Slide Tambahan (Dalem) -->
+    <!-- SLIDE 4 -->
     <div class="card" id="slide4">
-        <div class="image-box">
-            <img src="https://unsplash.com" alt="Deep Meaning">
-        </div>
-        <h2>Tentang hari ini...</h2>
-        <p>Aku tau kadang kerjaan atau aktivitas itu bikin jenuh. Tapi ingat, setiap lelah yang kamu lewati punya arti buat masa depan.</p>
+        <h2>Tentang Aktivitas Hari Ini.</h2>
+        <p>Aku tahu rutinitas pekerjaan atau kesibukan kadang terasa sangat monoton dan melelahkan. Wajar banget kalau ada fase jenuh yang datang.</p>
         <div class="btn-container">
-            <button onclick="pindahSlide(4, 5)">Next</button>
+            <button onclick="pindahSlide(4, 5)">Lanjut</button>
         </div>
     </div>
 
-    <!-- SLIDE 5: Slide Tambahan 2 (Dalem) -->
+    <!-- SLIDE 5 -->
     <div class="card" id="slide5">
-        <div class="image-box">
-            <img src="https://unsplash.com" alt="Support">
-        </div>
-        <h2>Kamu ga sendiri.</h2>
-        <p>Kapan pun hari terasa berat, ingat kalau di sini ada aku yang selalu naruh harapan dan doa baik buat kamu.</p>
+        <h2>Sebuah Pengingat Kecil.</h2>
+        <p>Tapi ingat ya, setiap proses lelah yang kamu lewati saat ini adalah investasi dan langkah nyata untuk menjemput hal-hal baik di masa depan.</p>
         <div class="btn-container">
-            <button onclick="pindahSlide(5, 6)">Terakhir</button>
+            <button onclick="pindahSlide(5, 6)">Lanjut</button>
         </div>
     </div>
 
-    <!-- SLIDE 6: Akhir / Asta Semangat -->
+    <!-- SLIDE 6 -->
     <div class="card" id="slide6">
-        <div class="image-box">
-            <img src="https://unsplash.com" alt="Anime Asta">
+        <h2>Kamu Tidak Sendiri.</h2>
+        <p>Kapan pun hari terasa berjalan terlalu berat atau tidak sesuai rencana, ingat kalau di sini selalu ada dukungan dan doa baik yang menemanimu.</p>
+        <div class="btn-container">
+            <button onclick="pindahSlide(6, 7)">Lanjut</button>
         </div>
-        <h2>Semangat kerja, Noy.</h2>
-        <p style="font-family: 'Fredoka One', cursive; font-size: 24px; color: #2c3e50; margin-bottom: 10px;">JANGAN MENYERAH!!!</p>
-        <p>Fokus sama tujuanmu hari ini. Lakukan yang terbaik, ya.</p>
+    </div>
+
+    <!-- SLIDE 7 -->
+    <div class="card" id="slide7">
+        <h2>Jaga Kesehatanmu.</h2>
+        <p>Jangan terlalu memaksakan diri melampaui batas. Istirahatlah kalau capek, dan jangan lupa makan tepat waktu. Fisikmu adalah aset berharga.</p>
+        <div class="btn-container">
+            <button onclick="pindahSlide(7, 8)">Slide Terakhir</button>
+        </div>
+    </div>
+
+    <!-- SLIDE 8 -->
+    <div class="card" id="slide8">
+        <h2>Tetap Semangat.</h2>
+        <div class="text-asta">JANGAN MENYERAH!!!</div>
+        <p style="text-align: center;">Fokus sama tujuanmu hari ini. Selesaikan bagianmu sebaik mungkin dan biarkan sisanya berjalan. Selamat beraktivitas.</p>
     </div>
 
     <script>
@@ -136,8 +146,9 @@
             document.getElementById('slide' + current).classList.remove('active');
             document.getElementById('slide' + next).classList.add('active');
         }
-        function jawabSalah() { alert("Jawabanmu kurang tepat, coba tebak pilihan yang satu lagi. ✨"); }
-        function jawabBenar() { alert("Pilihan yang jujur. Kita lanjut ya. 🌸"); pindahSlide(2, 3); }
+        // Logika jawaban dibuat mengalir dewasa tanpa pop-up mengganggu
+        function jawabSalah() { alert("Kumpulkan semangatmu lagi, mari pilih langkah yang optimis. ✨"); }
+        function jawabBenar() { alert("Nah, pola pikir seperti ini yang mantap. Mari kita lanjut. 🌸"); pindahSlide(2, 3); }
     </script>
 </body>
 </html>
