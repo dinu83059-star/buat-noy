@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semangat Pagi Noy! ✨</title>
+    <title>Untuk Noy ✨</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background: linear-gradient(135deg, #0f0c20, #ff758c);
+            background: linear-gradient(135deg, #2c3e50, #bdc3c7);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -17,116 +17,118 @@
             font-family: 'Nunito', sans-serif;
         }
         .card {
-            background: rgba(255, 255, 255, 0.97);
+            background: rgba(255, 255, 255, 0.98);
             width: 90%;
             max-width: 380px;
-            padding: 22px;
-            border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             text-align: center;
             display: none;
-            animation: popMasuk 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            border: 4px solid #ff4757;
+            animation: popMasuk 0.5s ease forwards;
+            border: 3px solid #34495e;
         }
         .active { display: block; }
-        @keyframes popMasuk { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: scale(1); } }
+        @keyframes popMasuk { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
         
-        /* BOX ANIMASI DIBUAT DENGAN EMOTICON NYATA BERGERAK HIDUP */
-        .anime-box {
-            width: 100%; height: 210px; border-radius: 18px; overflow: hidden;
-            margin-bottom: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); 
-            background: #111; position: relative;
-            display: flex; justify-content: center; align-items: center;
+        .image-box {
+            width: 100%; height: 200px; border-radius: 15px; overflow: hidden;
+            margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #eaeded; position: relative;
         }
-        .visual-anime { font-size: 85px; position: relative; z-index: 5; }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; }
         
-        h2 { font-family: 'Fredoka One', cursive; font-size: 20px; color: #ff4757; margin-bottom: 10px; line-height: 1.3; }
-        p { font-size: 15px; color: #2f3542; margin-bottom: 20px; font-weight: 700; }
-        .btn-container { display: flex; flex-direction: column; gap: 12px; }
+        h2 { font-family: 'Fredoka One', cursive; font-size: 20px; color: #2c3e50; margin-bottom: 12px; }
+        p { font-size: 15px; color: #7f8c8d; margin-bottom: 20px; font-weight: 700; line-height: 1.5; }
+        .btn-container { display: flex; flex-direction: column; gap: 10px; }
+        
         button {
-            padding: 14px; font-size: 15px; font-weight: 900; border: none; border-radius: 50px; cursor: pointer; transition: 0.1s;
-            background: linear-gradient(to right, #ff4757, #ff6b81); color: white; box-shadow: 0 6px 12px rgba(255, 71, 87, 0.4);
+            padding: 13px; font-size: 15px; font-weight: 900; border: none; border-radius: 50px; cursor: pointer; transition: 0.1s;
+            background: #34495e; color: white; box-shadow: 0 4px 10px rgba(52, 73, 94, 0.3);
         }
-        button:active { transform: scale(0.93); }
+        button:active { transform: scale(0.95); }
         
         .nama-tag {
-            position: absolute; background: #ff4757; color: white; padding: 4px 12px; border-radius: 10px; font-size: 11px; font-weight: 900;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4); border: 2px solid white; animation: goyangTag 0.8s infinite alternate; z-index: 10;
+            position: absolute; background: #34495e; color: white; padding: 4px 12px; border-radius: 10px; font-size: 11px; font-weight: 900;
+            border: 2px solid white; z-index: 10;
         }
-        #namaDika { top: 15px; left: 10%; }
-        #namaNoy { top: 15px; right: 10%; }
-        
-        /* SISTEM ANIMASI JALUR CODE AGAR NYATA BERGERAK DAN TIDAK KAKU */
-        .sharingan-aktif { animation: kedipMata 1.5s infinite steps(1) alternate; }
-        @keyframes kedipMata { 0%, 100% { content: "👁️‍🗨️"; transform: scale(1); } 50% { content: "🔴"; transform: scale(1.1); filter: drop-shadow(0 0 15px red); } }
-        
-        .sasusaku-aktif { animation: kasihBunga 0.8s infinite alternate ease-in-out; }
-        @keyframes kasihBunga { from { transform: translateX(-10px) scale(1); } to { transform: translateX(10px) scale(1.1); } }
-        
-        .asta-aktif { animation: teriakMembara 0.15s infinite linear; font-size: 95px; }
-        @keyframes teriakMembara { 0% { transform: translate(2px, 2px) rotate(0deg); filter: drop-shadow(0 0 10px #ff4757); } 50% { transform: translate(-2px, -2px) rotate(3deg); filter: drop-shadow(0 0 25px #ff7675); } 100% { transform: translate(2px, -2px) rotate(-3deg); } }
-        
-        .bg-api { position: absolute; width: 100%; height: 100%; font-size: 40px; opacity: 0.3; display: flex; justify-content: space-around; align-items: flex-end; padding-bottom: 10px; }
-        .text-asta { font-family: 'Fredoka One', cursive; font-size: 28px; color: #ff4757; text-shadow: 0 0 8px #ff6b81, 0 0 15px #ff4757; animation: getarAsta 0.1s infinite; margin-bottom: 10px; }
-        @keyframes getarAsta { 0% { transform: translate(1px, 1px); } 50% { transform: translate(-1px, -1px); } 100% { transform: translate(1px, -1px); } }
-        @keyframes goyangTag { from { transform: translateY(0); } to { transform: translateY(-6px); } }
+        #namaDika { top: 15px; left: 15%; }
+        #namaNoy { top: 15px; right: 15%; }
     </style>
 </head>
 <body>
 
-    <!-- SLIDE 1: Sasuke Membuka Mata Sharingan -->
+    <!-- SLIDE 1: Awal -->
     <div class="card active" id="slide1">
-        <div class="anime-box">
-            <div class="bg-api" style="font-size: 25px; align-items: center;">⚡ ✨ ⚡ ✨</div>
-            <!-- Animasi Transisi Realistis Mata Sasuke Berubah Jadi Sharingan Merah Menyala -->
-            <div class="visual-anime sharingan-aktif">👁️‍🗨️</div>
+        <div class="image-box">
+            <img src="https://unsplash.com" alt="Anime Sasuke">
         </div>
-        <h2>Haloo sayang ku selamat pagi... 🥰💖</h2>
-        <p>Bangun woyy! Hari ini harus awali hari dengan senyuman terbaikmu ya!</p>
+        <h2>Halo Noy, selamat pagi.</h2>
+        <p>Ga ada kata-kata puitis hari ini. Cuma mau mastiin kamu udah siap ngejalani hari dengan baik.</p>
         <div class="btn-container">
-            <button onclick="pindahSlide(1, 2)">Ingin lanjut part 2 sayang? Pilih ini</button>
+            <button onclick="pindahSlide(1, 2)">Lanjut part 2, sayang? Pilih ini</button>
         </div>
     </div>
 
-    <!-- SLIDE 2: Pertanyaan Iseng -->
+    <!-- SLIDE 2: Pertanyaan Teka-teki -->
     <div class="card" id="slide2">
-        <div class="anime-box">
-            <div class="visual-anime" style="animation: getarAsta 0.5s infinite alternate;">🤔💭</div>
+        <div class="image-box">
+            <img src="https://unsplash.com" alt="Anime Thinking">
         </div>
-        <h2>Pertanyaan Penting! 🤔</h2>
-        <p>Hayo tebak jujur, kenyataan mana yang paling bener sedunia?</p>
+        <h2>Pertanyaan singkat.</h2>
+        <p>Dari dua pilihan ini, tebak mana pernyataan yang paling benar?</p>
         <div class="btn-container">
             <button onclick="jawabSalah()">Dika ganteng 😎</button>
             <button onclick="jawabBenar()">Dika imud 🥺👉👈</button>
         </div>
     </div>
 
-    <!-- SLIDE 3: Sasuke & Sakura (Dika & Noy Gerak Realistis Kasih Cinta) -->
+    <!-- SLIDE 3: Sasuke & Sakura -->
     <div class="card" id="slide3">
-        <div class="anime-box">
+        <div class="image-box">
             <div class="nama-tag" id="namaDika">Dika (Sasuke)</div>
             <div class="nama-tag" id="namaNoy">Noy (Sakura)</div>
-            <!-- Animasi Bergerak Nyata Sasuke Menyodorkan Bunga & Cinta Secara Interaktif -->
-            <div class="visual-anime sasusaku-aktif">👦🏻👉🌹👩🏻</div>
+            <img src="https://unsplash.com" alt="Sasuke Sakura">
         </div>
-        <h2>Ciyeee bener kan... 🌹</h2>
-        <p>Nih pelukan hangat dan kasih sayang penuh dari Dika yang paling imud buat Noy kesayangan!</p>
+        <h2>Jawabanmu bener.</h2>
+        <p>Mungkin terdengar biasa aja, tapi kehadiran kamu itu berharga banget buat aku. Makasih ya udah ada sampai sekarang.</p>
         <div class="btn-container">
-            <button onclick="pindahSlide(3, 4)">Next Akhir Slide ✨</button>
+            <button onclick="pindahSlide(3, 4)">Lanjut lagi</button>
         </div>
     </div>
 
-    <!-- SLIDE 4: Akhir / Asta Semangat Teriak Membara Gila-gilaan -->
+    <!-- SLIDE 4: Slide Tambahan (Dalem) -->
     <div class="card" id="slide4">
-        <div class="anime-box">
-            <!-- Background Efek Aura Kobaran Api Nyata Milik Asta -->
-            <div class="bg-api">🔥💥🔥💥🔥</div>
-            <!-- Animasi Karakter Asta Teriak Bergetar Dahsyat Luar Biasa (Ga Formal!) -->
-            <div class="visual-anime asta-aktif">🧑🏼‍b💪😈</div>
+        <div class="image-box">
+            <img src="https://unsplash.com" alt="Deep Meaning">
         </div>
-        <h2>Semangat kerja sayang! 🔥💪</h2>
-        <div class="text-asta">JANGAN MENYERAH!!!</div>
-        <p>Aku selalu dukung dan doain kamu dari sini. Semangat banting tulang demi masa depan kita, mwah! 😘❤️</p>
+        <h2>Tentang hari ini...</h2>
+        <p>Aku tau kadang kerjaan atau aktivitas itu bikin jenuh. Tapi ingat, setiap lelah yang kamu lewati punya arti buat masa depan.</p>
+        <div class="btn-container">
+            <button onclick="pindahSlide(4, 5)">Next</button>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: Slide Tambahan 2 (Dalem) -->
+    <div class="card" id="slide5">
+        <div class="image-box">
+            <img src="https://unsplash.com" alt="Support">
+        </div>
+        <h2>Kamu ga sendiri.</h2>
+        <p>Kapan pun hari terasa berat, ingat kalau di sini ada aku yang selalu naruh harapan dan doa baik buat kamu.</p>
+        <div class="btn-container">
+            <button onclick="pindahSlide(5, 6)">Terakhir</button>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Akhir / Asta Semangat -->
+    <div class="card" id="slide6">
+        <div class="image-box">
+            <img src="https://unsplash.com" alt="Anime Asta">
+        </div>
+        <h2>Semangat kerja, Noy.</h2>
+        <p style="font-family: 'Fredoka One', cursive; font-size: 24px; color: #2c3e50; margin-bottom: 10px;">JANGAN MENYERAH!!!</p>
+        <p>Fokus sama tujuanmu hari ini. Lakukan yang terbaik, ya.</p>
     </div>
 
     <script>
@@ -134,8 +136,8 @@
             document.getElementById('slide' + current).classList.remove('active');
             document.getElementById('slide' + next).classList.add('active');
         }
-        function jawabSalah() { alert("Hehhh salah parah! 😜 Coba klik pilihan satunya lagi!"); }
-        function jawabBenar() { alert("Nah cakep! Memang Dika itu imud tiada tandingan wkwkwk 🌸"); pindahSlide(2, 3); }
+        function jawabSalah() { alert("Jawabanmu kurang tepat, coba tebak pilihan yang satu lagi. ✨"); }
+        function jawabBenar() { alert("Pilihan yang jujur. Kita lanjut ya. 🌸"); pindahSlide(2, 3); }
     </script>
 </body>
 </html>
