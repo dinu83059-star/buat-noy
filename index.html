@@ -8,7 +8,7 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            background: linear-gradient(135deg, #0f0c20, #ff758c);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -17,12 +17,12 @@
             font-family: 'Nunito', sans-serif;
         }
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            width: 88%;
+            background: rgba(255, 255, 255, 0.97);
+            width: 90%;
             max-width: 380px;
-            padding: 25px;
+            padding: 22px;
             border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             text-align: center;
             display: none;
             animation: popMasuk 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -30,55 +30,54 @@
         }
         .active { display: block; }
         @keyframes popMasuk {
-            from { opacity: 0; transform: scale(0.5); }
+            from { opacity: 0; transform: scale(0.6); }
             to { opacity: 1; transform: scale(1); }
         }
         .anime-box {
             width: 100%;
-            height: 180px;
+            height: 220px;
             border-radius: 18px;
+            overflow: hidden;
             margin-bottom: 15px;
-            background: #fff0f3;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            background-color: #000;
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 80px;
-            border: 2px dashed #ff4757;
         }
-        h2 { font-family: 'Fredoka One', cursive; font-size: 22px; color: #ff4757; margin-bottom: 10px; line-height: 1.3; }
-        p { font-size: 16px; color: #2f3542; margin-bottom: 20px; font-weight: 700; }
+        .anime-box img { width: 100%; height: 100%; object-fit: cover; }
+        h2 { font-family: 'Fredoka One', cursive; font-size: 20px; color: #ff4757; margin-bottom: 10px; line-height: 1.3; }
+        p { font-size: 15px; color: #2f3542; margin-bottom: 20px; font-weight: 700; }
         .btn-container { display: flex; flex-direction: column; gap: 12px; }
         button {
-            padding: 15px; font-size: 16px; font-weight: 900; border: none; border-radius: 50px; cursor: pointer; transition: 0.1s;
+            padding: 14px; font-size: 15px; font-weight: 900; border: none; border-radius: 50px; cursor: pointer; transition: 0.1s;
             background: linear-gradient(to right, #ff4757, #ff6b81); color: white; box-shadow: 0 6px 12px rgba(255, 71, 87, 0.4);
         }
         button:active { transform: scale(0.93); }
         .nama-tag {
-            position: absolute; background: #ff4757; color: white; padding: 4px 12px; border-radius: 10px; font-size: 12px; font-weight: 900;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3); border: 2px solid white; animation: goyangTag 0.8s infinite alternate; z-index: 10;
+            position: absolute; background: #ff4757; color: white; padding: 4px 12px; border-radius: 10px; font-size: 11px; font-weight: 900;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4); border: 2px solid white; animation: goyangTag 0.8s infinite alternate; z-index: 10;
         }
-        #namaDika { top: 15px; left: 10%; }
-        #namaNoy { top: 15px; right: 10%; }
+        #namaDika { top: 15px; left: 15%; }
+        #namaNoy { top: 15px; right: 15%; }
         @keyframes goyangTag { from { transform: translateY(0); } to { transform: translateY(-6px); } }
         .text-asta {
             font-family: 'Fredoka One', cursive; font-size: 28px; color: #ff4757; text-shadow: 0 0 8px #ff6b81, 0 0 15px #ff4757;
-            animation: getarAsta 0.15s infinite; margin-bottom: 10px;
+            animation: getarAsta 0.1s infinite; margin-bottom: 10px;
         }
         @keyframes getarAsta {
             0% { transform: translate(1px, 1px) rotate(0deg); }
             50% { transform: translate(-1px, -1px) rotate(1.5deg); }
             100% { transform: translate(1px, -1px) rotate(-1deg); }
         }
-        /* Efek emoji goyang */
-        .goyang-animasi { animation: goyangTag 0.6s infinite alternate; }
     </style>
 </head>
 <body>
 
     <!-- SLIDE 1 -->
     <div class="card active" id="slide1">
-        <div class="anime-box"><span class="goyang-animasi">🥷✨</span></div>
+        <div class="anime-box">
+            <!-- KLIP ASLI: Mata Sharingan Sasuke Berkedip Nyata -->
+            <img src="https://giphy.com" alt="Sasuke Sharingan">
+        </div>
         <h2>Haloo sayang ku selamat pagi... 🥰💖</h2>
         <p>Bangun woyy! Hari ini harus awali hari dengan senyuman terbaikmu ya!</p>
         <div class="btn-container">
@@ -88,7 +87,10 @@
 
     <!-- SLIDE 2 -->
     <div class="card" id="slide2">
-        <div class="anime-box"><span>🤔💭</span></div>
+        <div class="anime-box">
+            <!-- KLIP ASLI: Shikamaru / Anime Naruto sedang mikir keras -->
+            <img src="https://giphy.com" alt="Thinking Naruto">
+        </div>
         <h2>Pertanyaan Penting! 🤔</h2>
         <p>Hayo tebak jujur, kenyataan mana yang paling bener sedunia?</p>
         <div class="btn-container">
@@ -102,10 +104,11 @@
         <div class="anime-box">
             <div class="nama-tag" id="namaDika">Dika (Sasuke)</div>
             <div class="nama-tag" id="namaNoy">Noy (Sakura)</div>
-            <span class="goyang-animasi">🌹👩‍❤️‍👨🌹</span>
+            <!-- KLIP ASLI: Sasuke Nyentuh Jidat Sakura Kasih Perhatian -->
+            <img src="https://giphy.com" alt="Sasuke Sakura Real">
         </div>
         <h2>Ciyeee bener kan... 🌹</h2>
-        <p>Nih bunga spesial plus pelukan hangat dari Dika yang paling imud buat Noy kesayangan!</p>
+        <p>Nih pelukan hangat dan kasih sayang penuh dari Dika yang paling imud buat Noy kesayangan!</p>
         <div class="btn-container">
             <button onclick="pindahSlide(3, 4)">Next Akhir Slide ✨</button>
         </div>
@@ -113,7 +116,10 @@
 
     <!-- SLIDE 4 -->
     <div class="card" id="slide4">
-        <div class="anime-box"><span class="goyang-animasi">🔥💪🔥</span></div>
+        <div class="anime-box">
+            <!-- KLIP ASLI: Asta Black Clover Mode Tempur Berapi-api Super Keren -->
+            <img src="https://giphy.com" alt="Asta Berserk Mode">
+        </div>
         <h2>Semangat kerja sayang! 🔥💪</h2>
         <div class="text-asta">JANGAN MENYERAH!!!</div>
         <p>Aku selalu dukung dan doain kamu dari sini. Semangat banting tulang demi masa depan kita, mwah! 😘❤️</p>
